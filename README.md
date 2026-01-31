@@ -43,6 +43,8 @@ project-root/
 │ ├── app/
 │ │ ├── core/ # Configuration, sécurité, dépendances
 │ │ ├── models/ # Modèles SQLAlchemy
+│ │ ├── database/ # Session DB, engine, connexion
+│ │ ├── schemas/ # Schémas Pydantic
 │ │ ├── routers/ # Endpoints API
 │ │ └── main.py # Point d’entrée FastAPI
 │ │
