@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Text
 from sqlalchemy.orm import relationship
+from sqlalchemy import CheckConstraint
 from app.database.base import Base
 
 class Task(Base):
@@ -16,3 +17,7 @@ class Task(Base):
 
     project = relationship("Project", back_populates="tasks")
     assignee = relationship("User", back_populates="tasks")
+
+    __table_args__ = (
+        CheckConstraint("status IN ('todo', 'doing', 'done')", name="check_status"),
+    )

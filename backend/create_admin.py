@@ -9,8 +9,9 @@ from app.core.security import hash_password
 ROLE = "admin"
 
 def main():
-    admin_email = os.getenv("ADMIN_EMAIL")
-    admin_password = os.getenv("ADMIN_PASSWORD")
+    # On cherche la variable d'environnement, sinon on utilise la valeur par défaut
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@gmail.com")
+    admin_password = os.getenv("ADMIN_PASSWORD", "mouad1234567")
 
     if not admin_email or not admin_email.strip():
         print("ERROR: ADMIN_EMAIL is not set.")
